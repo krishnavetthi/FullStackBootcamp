@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seletors</title>
+    
+    <style>
+     
+      /* universal selector */
+      
+      *{
+      background-color:#9977c6;
+      color:#becdd4;
+      }
+
+      /* individual selector */
+      h3{
+        text-decoration:underline;
+      }
+      p{
+        color:#CAD5E2;
+      }
+      /* class and id selector */
+      .highlight{
+        background-color: yellow;
+        color:black;
+      }
+
+      #ident{
+        background: white;
+        color:red;
+      }
+      
+      /* and selector (chained) */
+      p span.highlight{
+        background-color: red;
+        color:white;
+      }
+      /* combined selector */
+      h1, code{
+        color:#32b35b;
+        background-color: rgb(239, 227, 227);
+      }
+      /* inside an element */
+       body div code{
+        display:block;
+        width:500px;
+        color:#414848;
+        background-color: white;
+       }
+      /* direct child */
+      div>h3{
+        color:aqua;
+      }
+      /* sibling  ~ or + */
+      .sibling + li {
+        display:inline;
+        color:black;
+        background-color: pink;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1> Article on CSS Selectors</h1>
+    <h4>CSS Selectors are patterns used to select the HTML elements we want to style. Rather than writing inline CSS for each element and same style for other elements we can use CSS selectors to minimise the duplication of CSS styling  code. Lets try to understand the different types of selectors below:</h4>
+    <div>
+    <h3>Universal selector</h3>
+    <p> Universal selector allows to style all the elements on the HTML page. An asterick (*) is used for selecting all elements. With the code below, the backgound and text color of the entire HTML page changes to specified colors.<br></p>
+      <code>
+       *{<br>
+        background-color:#414848;<br>
+        color:#7b929c;<br>
+        }<br>
+      </code>
+    </div>  
+
+    <div>
+    <h3>Individual selector</h3>
+    <p>Individual selectors allows to style the HTML elements we want. Each element can have different style. The code below all the headings with h3 and p tag will have the color changed </p>
+    <code>
+      h3{<br>
+        color:#9881ab;<br>
+      }<br>
+      p{<br>
+        color:#CAD5E2;<br>
+      }<br>
+    </code>
+    </div>
+ 
+    <div>
+    <h3>Class and ID Selector</h3>
+    <p class="highlight">Class Selector allows to create a CSS class with the styles we want, these classes can be used for any HTML elements.</p>
+    <code>
+      .highlight{<br>
+        background-color: yellow;<br>
+        color:black;<br>
+      }<br>
+
+      &ltp class="highlight"&gtClass Selector allows .......&lt/p&gt <br><br>
+    </code>
+
+    <p id="ident">ID Selector allows to create a set of CSS styling, these id's should be uniquely used in HTML i.e, no two HTML elements should use the same ID, as ID should be unique for all HTML elements.</p>
+    <code>
+      #ident{<br>
+        background: white;<br>
+        color:red;<br>
+      }<br>
+
+      &ltp id="ident"&gtID Selector allows ......&lt/p&gt
+    </code>
+    </div>
+
+    <div>
+    <h3>AND Selector </h3>
+    <p>AND Selector allows to write a conditional styling, that is if we want to style a HTML element which has all the properties we specify then only the style is applied. Let us understand it better with an example:<br>In the below code we see that 'Hello' is a paragragh and span and also it has a class 'highlight' </p>
+    <code>&ltp&gt&ltspan class="highlight"&gtHello&lt/span&gt&ltp&gt</code>
+    <p>Now lets write an AND Selector CSS</p>
+    <code>
+    p span.highlight{<br>
+      background-color: red;<br>
+      color:white;<br>
+    }<br>
+    </code>
+    <p>The result should display Hello with red background as below:</p>
+    <p><span class="highlight">Hello</span></p>
+    </div>
+
+    <div>
+    <h3>Combined Selector</h3>
+    <p>Combined Selectors allows same styling for any specified HTML elements, that is more than one HTML element type can have same styling.</p>
+    <code>
+      h1, code{<br>
+        color:#d9ce98<br>
+      }<br>
+    </code>
+    </div>
+
+    <div>
+    <h3>Inside an Element Selector</h3>
+    <p>Inside an Element Selector allows to identify the nested elements and styles them. <br> In the below code we are styling the code element which is inside div element, div element is inside body element: </p>
+    <code>
+      body div code{<br>
+        display:block;<br>
+        width:500px;<br>
+        color:#414848;<br>
+        background-color: white;<br>
+       }<br>
+    </code>
+    </div>
+
+    <div>
+    <h3>Direct Child Selector</h3>
+    <p>Direct Child Selector allows to style the direct child elements, that is if the element is directly inside of the other element then it is used.</p>
+    <code>
+      div>h3{<br>
+        color:aqua;<br>
+      }<br>
+    </code>
+    </div>
+
+    <div>
+    <h3>Sibling Selector Selectors</h3>
+    <p>Sibling Selector Selectors allows to style the just next element of the element using the sibling class. </p>
+    <code>
+      .sibling + li {<br>
+        display:inline;<br>
+        color:black;<br>
+        background-color: pink;<br>
+      }
+    </code>
+    <ul>
+      <li class="sibling">First elementin list using sibling class</li>
+      <li>Second element of the list next to the element using sibling class</li>
+      <li>Third element.</li>
+    </ul>
+    </div>
+
+    <div>
+      <h3>Before After Selectors</h3>
+      <p>Before After Selectors are Pseudo Selectors, these are used to add cosmetic styling before and after the HTML elements<br> Few scenarios where we can apply these, before all the list if we want to add an image before the lists we can use <em>::before </em>selector.<br> We can use <em>after</em> selector if we want to insert any emoji or link emoji after the hyperlink.</p>
+      <br>
+    <br>
+    </div>
+  </body>
+</html>
