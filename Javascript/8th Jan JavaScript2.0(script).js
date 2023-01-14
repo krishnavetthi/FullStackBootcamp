@@ -20,8 +20,9 @@ Array.prototype.heyHitesh = function(){
 }
 
 myHeros.hitesh()
-
-//inheritance 
+heropower.hitesh()
+dcHeros.heyHitesh()
+//inheritance -- prototype chaining 
 
 const User = {
     name: "top name",
@@ -48,14 +49,15 @@ Teacher.__proto__ = User
 
 Object.setPrototypeOf(TeachingSupport, Teacher)
 
+console.log(TeachingSupport.makeVideos)
 
 // Goal: get truelength of string
 
-let yourname = "pooja"
-
+let justname = "  krishna "
 String.prototype.truelength = function(){
-    console.log(`${this.name}`);
     console.log(`true length is: ${this.trim().length}`);
 }
 
 let myname = "hitesh   "
+
+justname.truelength();
