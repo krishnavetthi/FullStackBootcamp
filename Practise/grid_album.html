@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cont{
+            display:grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-gap: 15px;   
+        }
+        .box{
+            height:400px;
+            /*width:100px;
+            border:1px solid black; */
+        }
+        .subcont{
+            display:flex;
+            flex-direction: column; 
+            flex-wrap: wrap;
+            gap: 40px;
+            
+        }
+        .subbox{
+            height: 200px;
+            gap:10px;
+            width:350px;
+            
+        }
+        .image{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block; 
+        }
+        .box1{
+            /* background-color: rgb(30, 215, 141); */
+            height:800px;
+            grid-row-start: 1;
+            grid-row-end: 3;
+            background: url("https://plus.unsplash.com/premium_photo-1671559020847-6793cbee18b0?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+            background-size: cover;
+        }
+        .box2{
+            background-color:rgb(50, 149, 181);
+            grid-column-start: 2;
+            grid-column-end: 3;
+        }
+        .box3{
+            background-color: pink;
+        }
+        .box4{
+            background-color: blue;
+        }
+        .box5{
+            background-color: red;
+        }
+        .box6{
+            background-color: rgb(193, 168, 27);
+        }
+        .box7{
+            background-color: rgb(135, 28, 85);
+            grid-column-start: 2;
+            grid-column-end: 4;
+        }
+        .box8{
+            background-color: rgb(25, 229, 56);
+        }
+        .box9{
+            background-color: rgb(236, 39, 62);
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Grid Album Mini Project -->
+    <div class="cont">
+        <div class="box box1 subcont">
+            <div class="box box9 subbox">
+                <img src="https://plus.unsplash.com/premium_photo-1666920428775-ec9ddeaae574?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Ice cream" class="image">
+            </div>
+            <div class="box box9 subbox">
+               <img src="https://media.istockphoto.com/id/1405543709/photo/colorful-ice-cream-balls-on-table.jpg?s=1024x1024&w=is&k=20&c=CcU-SO_GlxjAEHQw8WxV_dG5Nov3zvtTAWJcxiN3tco=" alt="Scoops" class="image">
+            </div>
+            <div class="box box9 subbox">
+                <img src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cone"class="image">
+            </div>
+        </div>
+        <div class="box box2">
+            <img src="https://images.unsplash.com/photo-1557142046-c704a3adf364?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Coffee" class="image">
+        </div>
+        <div class="box box3">
+            <img src="https://plus.unsplash.com/premium_photo-1678198786424-c2cc6593f59c?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="image">
+        </div>
+        <div class="box box4">
+            <img src="https://plus.unsplash.com/premium_photo-1661386235368-ab28ffd63a84?q=80&w=2788&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="image">
+        </div>
+        <div class="box box5">
+            <img src="https://images.unsplash.com/photo-1590080962330-747c6aba8028?q=80&w=2960&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="image">
+        </div>
+        <div class="box box6">
+            <img src="https://images.unsplash.com/photo-1630253775921-9b79ecf5a565?q=80&w=2785&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="image">
+        </div>
+        <div class="box box7">
+            <img src="https://images.unsplash.com/photo-1593558159516-d0be2a960c52?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="image">
+        </div>
+        <div class="box box8">
+            <img src="https://images.unsplash.com/photo-1587563974670-b5181b459b30?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="image">
+        </div>
+        <div class="box box9">
+            <img src="https://images.unsplash.com/photo-1594488506255-a8bbfdeedbaf?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="image">
+        </div>
+    </div>
+</body>
+</html>

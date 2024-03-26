@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: grid;
+            height:700px;
+            /* grid-template-columns: 100px 100px 100px; */
+            grid-template-columns:1fr 1fr 1fr;
+            /* border: 1px solid black;
+            grid-template-rows: 100px 100px 100px; */
+            /* grid-template-columns:minmax(100px, 1fr) minmax(100px, 1fr);
+            grid-template-rows: repeat(3,50px); */
+            /* justify-items : end;
+            align-items:center; */
+        }
+        .box{
+            /* height:100px;
+            width:100px; */
+            border:1px dotted black;
+        }
+        .box1{
+            background-color: aqua;
+            /* align-self:start; */
+        }
+        .box2{
+            background-color: blueviolet;
+            /* justify-self:center; */
+        }
+        .box3{
+            background-color: rgb(92, 194, 69);
+            grid-column-start: 1;
+            grid-column-end: 4;
+        }
+        .box4{
+            background-color: rgb(225, 113, 139);
+            /* grid-column-start: 0;
+            grid-column-end: 1; */
+        }
+        .box5{
+            background-color: rgb(223, 203, 99);
+        }
+        .box6{
+            background-color: rgb(12, 59, 23);
+        }
+        .box7{
+            background-color: rgb(65, 137, 215);
+        }
+        .box8{
+            background-color: rgb(212, 141, 40);
+        }
+        .box9{
+            background-color: rgb(169, 34, 45);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+        <div class="box box4"></div>
+        <div class="box box5"></div>
+        <div class="box box6"></div>
+        <div class="box box7"></div>
+        <div class="box box8"></div>
+        <div class="box box9"></div>
+    </div>
+</body>
+</html>
