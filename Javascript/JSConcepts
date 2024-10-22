@@ -1,0 +1,256 @@
+# **JS code executes in Execution Context envirenment**
+
+```javascript
+var a = 10;
+var b = 20;
+
+function add (){
+    console.log(a+b);
+}
+```
+
+**Execution Context** ---> line by line execution -- >single threaded --> Synchronous Programming Language
+ ___________________________
+|##Code Block|##Memory Block|
+|____________|______________|
+| key:value  |  1st line    |
+|  a:10      |  2nd         |
+|  b:10      |  3rd         |
+|function{   |   .          |
+|        :}  |   .          |
+|            |   .          |
+-----------------------------
+
+**Global Execution Context**
+
+G.E.C is for whole JS code, for every function new execution context is created in memory, once the functn execution is done, the functn execution context is gone.
+
+```javascript
+var a = 10;
+var b = 20;
+
+function add (){
+    var c = a+b;
+    return c;
+}
+
+var result = add();
+```
+___________________________________________________________
+|  scan (code block) |memory allocation (memory block)    |
+|--------------------|------------------------------------|
+|                    |                                    |
+|____________________|____________________________________|
+
+ _________________________________________
+|##Code Block       |##Memory Block       |
+|___________________|_____________________|
+|a=~~undefined ~~ 10|     a=10            |
+|b=~~undefined~~ 20 |     b=20            |
+| function add(){   |  __________________ |
+|     : }           |  |__Code_|_memory_| |
+|                   |  |c=     |c=30    | |
+|                   |  |~~und~~|        | |
+|                   |  |  30   |        | |
+|                   |  |       |        | |
+|                   |   ----------------  |
+|res=~~undefined~~  |  after functn execn |
+|        30         | fun exec context is |
+|                   | removed             |
+-------------------------------------------
+
+after the execution of the JS code, G.E.C also is destroyed.
+
+**Call Stack**
+
+Call stack gets global execution context in the stack, then the function calls adds, as soon as the function executions are done they pop from the stack.
+
+|                  |
+|                  |
+|                  |
+|                  |
+|                  |
+|__________________|
+|       add()      | ---> once add() finishes exectn
+|__________________|   it is popped out from call stack
+|       G.E.C      |
+|__________________|
+
+**"use strict"**
+
+ '===' is an example of strict check
+
+JavaScript's strict mode is a way to opt in to a restricted variant of JavaScript, thereby implicitly opting-out of "sloppy mode".
+**{{used to avoid mistakes}}**
+
+1. Eliminates some JavaScript silent errors by changing them to throw errors.
+2. Fixes mistakes that make it difficult for JavaScript engines to perform optimizations: strict mode code can sometimes be made to run faster than identical code that's not strict mode.
+3. Prohibits some syntax likely to be defined in future versions of ECMAScript.
+
+# JS Basics
+
+**Variable**
+**Datatype**
+**Primitive** =>  
+Number, string, boolean, null, undefined
+
+**Non-Primitive** => Multiple Values
+**Array**
+```javascript
+//Values are taken first and then memory allocation done
+let names = ["Krishna","Sai","Adi","Chinni"];
+//Memory allocation is done first and then values are taken
+let names = new Array("Krishna","Sai","Adi","Chinni"),
+
+//length of array
+let length = names.length;
+
+//Push
+//Pop
+//slice
+//splice
+//shift
+//unshift
+//fill
+//includes
+//indexof
+//join
+//keys
+//last
+//lastindexof
+//reverse
+//concat
+//sort
+//split
+//trim
+
+```
+**Object**
+
+```javascript
+let person = {
+    firstName : "Krishna vetthi",
+    lastName : "Boddu",
+    hobbies:[],
+    addHobby:function(hobby){
+        this.hobbies.push(hobby);
+    },
+};
+person.addHobby("singing");
+console.log(person);
+```
+
+
+**typeof** 
+**template literal** `
+```javascript
+let n = 5;
+console.log(`Hi ${n}`);
+console.log(typeof n);
+```
+
+**var, let and const ***
+var -> global scope
+let and const -> local scope
+
+**Hoisting**
+
+**Operators**
+Arithmetic Operators
+Logical Operators
+Assignment Operators
+Comparision Operators
+
+**Conditions**
+if else
+switch case
+terenary condition (condition ? true: false)
+
+**Math**
+**Date**
+
+**Loops**
+while
+do...while
+for loop
+for..of
+for..in
+
+**Function**
+Normal Function
+Function with parameter and return type
+Anonymous function
+Expressions
+Self Invoking Function
+
+**Promise**
+
+**HOF**
+Other functions as parameters, return a function
+
+**Callback**
+A function which can be passed as parameter to other function
+```javascript
+setInterval(()=>{},1000);
+setTimeout(()=>{},3000);
+```
+**Functional Programming**
+
+array.forEach(()=>{})
+
+***IMP**
+**Map** => iterate over array and perform a action
+array.map(()=>{})
+```javascript
+const numbers = [1,2,3,4,5];
+const multiply = numbers.map((e)=>e*5);
+console.log(multiply)
+```
+
+**Filter** => iterate over array and filter out elements (doesnot modify or do any operations)
+array.filter(()=>{})
+```javascript
+const countries = ['India','Pakistan','Dubai','USA','England','Australia'];
+const uppercase = countries.filter((e)=>e.includes(e.toUpperCase()));
+console.log(uppercase);
+```
+
+**Reduce** => single value
+accumulator, current, initial value 
+
+```javascript
+const num1 = [1,2,3,4,5,6,7];
+const sum = num1.reduce((acc,curr)=>acc+curr,1);
+//1 is initial value
+console.log(sum);
+```
+##### ** Promise**
+```javascript
+const makePromise = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        const arrOne = ["HTML","CSS","Javascript","Tailwind"];
+        if(arrOne.length > 0){
+            resolve("Completed");
+        }else{
+            reject("Incomplete");
+        }
+    });
+});
+
+makePromise
+.then((result)=>{
+    console.log(result);
+})
+.catch((result)=>{
+    console.log(result);
+})
+```
+##### **Fetch API**
+
+```javascript
+const url = "https://restcountries.com/v2/all";
+fetch(url)
+.then((response)=>response.json())
+.then((data)=>console.log(data))
+.catch((error)=>console.log(error))
+```
